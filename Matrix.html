@@ -1,0 +1,53 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+
+function Matrix (U,L,C){
+    var Result1 = []; 
+    var Result2 = []; 
+    var AcumU = 0;
+    var AcumL = 0;
+    var stringU = "";
+    var stringL = "";
+    for(var column in C)
+    {
+        if(C[column]==2)
+        {
+            Result1[column]=1;
+            Result2[column]=1;
+        }
+        else if(C[column]==0)
+        {
+            Result1[column]=0;
+            Result2[column]=0;
+        }
+        else{
+            if(U>L && AcumU<U){
+                Result1[column]=1;
+                Result2[column]=0;
+            }
+            else{
+                Result2[column]=1;
+                Result1[column]=0;
+            }
+        }
+        AcumU = AcumU + Result1[column];
+        stringU = stringU + Result1[column];
+        AcumL = AcumL + Result2[column];
+        stringL = stringL + Result2[column];
+    }
+
+    if(AcumU == U && AcumL ==L)
+    {
+        console.log(stringU + "," + stringL);
+    }
+    else{
+        console.log("IMPOSSIBLE")
+    }
+    return;
+}
+
+Matrix (3,2,C=[2,1,1,0,1])
+Matrix (2,3,C=[0,0,1,2])
+Matrix (2,2,C=[2,0,2,0])
+</script>

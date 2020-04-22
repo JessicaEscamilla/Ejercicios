@@ -1,0 +1,38 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+    
+const gcd = function (a, b){
+    a = Math.abs(a);
+    b = Math.abs(b);
+    if (b > a) 
+    {
+        var temp = a; 
+        a = b; 
+        b = temp;
+    }
+    while (true) {
+        if (b == 0) return a;
+        a %= b;
+        if (a == 0) return b;
+        b %= a;
+    }
+}
+function calculate (x1,y1,x2,y2){
+    var difx = x2-x1;
+    var dify = y2-y1;
+    
+    var rotx = dify ;
+    var roty = -difx ;
+    var div = gcd (rotx, roty)
+
+    var pfx = x2 + (rotx/div);
+    var pfy = y2 + (roty/div);
+    console.log(pfx , pfy)
+}
+
+calculate (-1,3,3,1)
+calculate (2,2,2,-3)
+calculate (1,3,3,3)
+calculate (-12,-13,2,3)
+</script>
