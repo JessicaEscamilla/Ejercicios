@@ -1,0 +1,28 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+
+function solution(A) {
+    debugger
+   var count = 0;
+   var zero = 0;
+   for (var i =0; i<A.length; i++){
+    if(A[i]===0){
+        zero++
+    }
+    else{
+        count = zero + count;
+        if (count > 1000000000){
+            return -1;
+        }
+    }
+   }
+
+   console.log(count)
+   return count;
+}
+
+solution (A=[0,1,0,1,1])
+
+
+</script>

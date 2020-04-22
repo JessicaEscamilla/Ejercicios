@@ -1,0 +1,35 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+
+function solution(A) {
+    var lower = [];
+    var upper = [];
+
+  for (var i = 0; i < A.length; i++) {
+    lower[i] = i -  A[i];
+    upper[i] = i +  A[i];
+  }
+
+  lower.sort(function(a, b){return a-b});;
+  upper.sort(function(a, b){return a-b});;
+
+  var intersection = 0;
+  var j = 0;
+
+  for (var i = 0; i < A.length; i++) {
+    while (j < A.length && upper[i] >= lower[j]) {
+      intersection += j;
+      intersection -= i;
+      j++;
+    }
+  }
+
+  if (intersection > 10000000) return -1;
+  return intersection;
+}
+
+solution (A=[1,5,2,1,4,0])
+
+
+</script>

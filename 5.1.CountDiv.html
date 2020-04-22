@@ -1,0 +1,19 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+function solution (A, B, K){
+    var b = Math.floor(B/K);
+    var a = (A > 0 ? Math.floor((A - 1)/K): 0);
+    if(A == 0){
+        b++;
+    }
+    return b - a;
+    //return count;
+    console.log(count);
+}
+
+solution (6,11,2)
+solution (11,345,17)
+
+
+</script>

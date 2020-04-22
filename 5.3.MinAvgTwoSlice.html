@@ -1,0 +1,32 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+
+
+function solution(A) {
+   var start = 0;
+   var Sum = A[0] + A[1];
+   var min = Sum / 2;
+   for (var i=2; i<A.length; i++) {
+      Sum += A[i];
+      var newMin = Sum / 3;
+      if (newMin < min) {
+         min = newMin;
+         start = i-2;
+      }
+
+      Sum -= A[i-2];
+      newMin = Sum / 2;
+      if (newMin < min) {
+         min = newMin;
+         start = i-1;
+      }
+   }
+   console.log(start)
+   return start;
+}
+
+solution (A=[4,2,2,5,1,5,8])
+
+
+</script>

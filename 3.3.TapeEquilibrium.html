@@ -1,0 +1,31 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+function LoadBalancer (A){
+        var sum = A.reduce((a, b) => a + b);
+        var left = 0;
+        var minDif = 100000;
+        var sumL = 0;
+        var sumR = sum;
+        var dif = 0;
+
+        while (left < (A.length -1) ){
+            sumL = sumL + A[left];
+            sumR = sumR - A[left];
+
+            dif = Math.abs(sumL - sumR);
+            if (dif < minDif){
+                minDif = dif;
+            }
+            left++
+        }
+        
+        console.log(minDif);
+        return minDif;
+}
+
+LoadBalancer (p1=[-1,-3,-4,-2,-2,-2,-1,-1,-2])
+LoadBalancer (p1=[3,2,-4,-1])
+LoadBalancer (p1=[1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2])
+LoadBalancer (p1=[1,2,1,120,1])
+</script>

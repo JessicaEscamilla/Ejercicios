@@ -1,0 +1,27 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+    
+function solution (A, K){
+    for(var count=0;count<K;count++){
+        var NewA = [];
+        for(var i=0;  i<A.length; i++){
+            if (i !=0){
+                NewA[i] = A[i-1]
+            }
+            else{
+                NewA[0] =A[A.length -1];
+            }
+        }
+        A=NewA;
+    }
+    
+    return A;
+    console.log(A)
+
+}
+
+solution (A=[3,8,9,7,6],3)
+solution (A=[1,2,3,4],4)
+solution (A=[0,0,0],1)
+</script>

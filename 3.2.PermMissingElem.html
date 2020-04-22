@@ -1,0 +1,32 @@
+<h1>Hola Mundo!</h1>
+
+<script>
+    
+function solution (A){
+    
+    var result = 0;
+    if(A.length == 0){
+        return 1;
+    }
+    A.sort(function ( a, b ) {
+        return b - a;
+    });
+    for (var i = 0; i < A.length; i ++) {
+        if (A[i + 1] !== A[i]-1) {
+            result= A[i]-1;
+            break;
+        }
+    }
+
+    if (result === 0){
+        result = A[0]+1;
+    }
+    return result;
+}
+
+solution (A=[])
+solution (A=[7,5,3,6,1,4])
+solution (A=[2,5,3,6,1,4])
+solution (A=[7,5,3,6,2,4])
+
+</script>
